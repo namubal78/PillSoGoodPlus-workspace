@@ -9,8 +9,8 @@
 	 	<!-- 어느 DB 에 접속할건지를 설정 -->
 	 	<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"/>
 	 	<property name="url" value="jdbc:oracle:thin:@localhost:1521:xe" />
-	 	<property name="username" value="PILL" />
-	 	<property name="password" value="PILL" />
+	 	<property name="username" value="PILLPLUS" />
+	 	<property name="password" value="PILLPLUS" />
 	 </bean>
 	
 	 <bean class="org.mybatis.spring.SqlSessionFactoryBean" id="sqlSessionFactory">

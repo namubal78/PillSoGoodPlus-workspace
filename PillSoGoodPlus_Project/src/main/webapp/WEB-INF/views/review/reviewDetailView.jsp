@@ -264,14 +264,6 @@
                             <tr>
                             	<td><p style="font-size: 25px; margin-top: 10px;"><b>${r.reviewTitle}</b></p></td>
                             </tr>
-                            <tr height="50px">
-                                <td>
-                                    <c:forEach var="p" items="${pList}">
-                                        <b>${p.productName}&nbsp;</b>
-                                    </c:forEach>
-                                </td>
-                                <td></td>
-                            </tr>
                             <tr height="30px">
                                 <td>
                                     <span style="color: #78C2AD;">
@@ -286,16 +278,30 @@
                                 <c:choose>
                                     <c:when test="${ r.subsStatus eq 'N'}">
                                         <td>
-                                            ${ r.memberName }&ensp;<span style="color: #78C2AD; font-weight: bold;">일시결제</span>&ensp;
+                                            ${ r.memberName }&ensp;
+                                            <c:forEach var="p" items="${pList}">
+		                                        <span style="color: #78C2AD; font-weight: bold;">${p.productName}&nbsp;</span>
+		                                    </c:forEach>
+                                            <span style="color: #78C2AD; font-weight: bold;">일시결제</span>&ensp;
                                         </td>
                                     </c:when>
                                     <c:when test="${ r.subsStatus eq 'Y'}">
                                         <td>
-                                            ${ r.memberName }&ensp;<span style="color: #78C2AD; font-weight: bold;">정기결제</span>&ensp;
+                                            ${ r.memberName }&ensp;
+                                            <c:forEach var="p" items="${pList}">
+		                                        <span style="color: #78C2AD; font-weight: bold;">${p.productName}&nbsp;</span>
+		                                    </c:forEach>
+		                                    <span style="color: #78C2AD; font-weight: bold;">정기결제</span>&ensp;
                                         </td>
                                     </c:when>
                                     <c:otherwise>
-										<td>${ r.memberName }&emsp;<span style="color: #78C2AD; font-weight: bold;">정기결제</span></td>
+										<td>
+											${ r.memberName }&emsp;
+											<c:forEach var="p" items="${pList}">
+		                                        <span style="color: #78C2AD; font-weight: bold;">${p.productName}&nbsp;</span>
+		                                    </c:forEach>
+											<span style="color: #78C2AD; font-weight: bold;">정기결제</span>
+										</td>
 									</c:otherwise>
                                 </c:choose>
                                 <td></td>

@@ -132,7 +132,7 @@ public class ReviewController {
 		model.addAttribute("list", list);
 		model.addAttribute("order", order);
 
-		System.out.println("가공 후 list: " + list);
+		// System.out.println("가공 후 list: " + list);
 		
 		// 리턴
 		return "review/reviewListView";

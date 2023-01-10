@@ -69,9 +69,9 @@
       margin-right: 7%;
     }
 
-    #side>a {
+    #side>div {
       position: relative;
-
+	  float: left;
     }
 
     .dropdown-item {
@@ -110,8 +110,7 @@
      }
      #alarmContainer {
          position : absolute;
-         right : 380px;
-         top : 35px;
+         right : 300px;
      }
      #alarmTable:hover {
          cursor:pointer;
@@ -257,14 +256,15 @@
             <c:choose>
             	<c:when test="${ empty loginUser }">
             	<!-- 로그인 전 -->
-	         	    
-	            	<a class="text-decoration-none" href="loginForm.me" style="color:rgb(92, 93, 96);">로그인 |</a>
-	            	<a class="text-decoration-none" href="enrollForm.me" style="color:rgb(92, 93, 96)">회원가입</a>	
+	         	    <div id="beforeLoginContainer">
+						<a class="text-decoration-none" href="loginForm.me" style="color:rgb(92, 93, 96);">로그인 |</a>
+						<a class="text-decoration-none" href="enrollForm.me" style="color:rgb(92, 93, 96)">회원가입</a>
+					</div>	
             	</c:when>
             	<c:otherwise>
             	<!-- 로그인 후 -->
-            	
-           		        <div id="alarmContainer">
+            		<div id="afterLoginContainer">
+	          			<div id="alarmContainer">
 				            <button type="button" id="alarmAreaButton" class="btn btn-primary position-relative"><img src="resources/images/alarm.png" width="25px" onclick="alarmAreaControl();" alt="">
 				                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" id="alarmCount">
 				                    
@@ -283,11 +283,14 @@
 				                </table>
 				            </div>
 				        </div>
-		            <a class="text-decoration-none" href="list.cart" style="color:rgb(92, 93, 96)">장바구니 |</a>    
-		            <a class="text-decoration-none" href="logout.me" style="color:rgb(92, 93, 96)">로그아웃 |</a> 
-		            <a class="text-decoration-none" style="color:rgb(92, 93, 96); cursor:pointer;" onclick="myPageControl();">마이페이지</a>      	
-                <a class="text-decoration-none" href="chat.ch" style="color:rgb(92, 93, 96)">CHAT</a> 
-              </c:otherwise>
+				        <div id="chatContainer">
+				            <a class="text-decoration-none" href="list.cart" style="color:rgb(92, 93, 96)">장바구니 |</a>    
+				            <a class="text-decoration-none" href="logout.me" style="color:rgb(92, 93, 96)">로그아웃 |</a> 
+				            <a class="text-decoration-none" style="color:rgb(92, 93, 96); cursor:pointer;" onclick="myPageControl();">마이페이지 |</a>      	
+		                	<a class="text-decoration-none" href="chat.ch" style="color:rgb(92, 93, 96)">1:1 채팅</a>
+		                </div>
+		    		</div> 
+            	</c:otherwise>
             </c:choose>
 
         </div>

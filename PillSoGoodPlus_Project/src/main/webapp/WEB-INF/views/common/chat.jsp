@@ -35,6 +35,49 @@
 	<style>
 	</style>
 </head>
+<style>
+
+    div {
+		/* border: 1px solid #78C2AD; */
+        box-sizing : border-box;
+    }
+
+    /* 전체를 감싸는 wrap */
+    .wrap {
+        width: 100%;
+        height: auto;
+        margin : auto;
+    }
+
+    .wrap>div { width : 100%; }
+
+    #navigator2 { height: 100px; }
+
+    #content { height: auto; display: flex; }
+    #content_2>div { width: 100%; float: left; }
+    #content_2_1 { height: 115px; }
+    #content_2_2 { height: auto; }
+
+    #header { height: 130px; }
+
+	#content_2_1>div { height: 100%; float: left; }
+
+    #content_2_1>p {
+        font-size: 35px;
+        margin-top: 20px;
+        margin-left: 30px;
+		font-weight: bold;
+    }
+
+	p { margin: 0px; color: black; }
+
+    /* content 영역 */
+    #content>div { height : 100%; float : left; }
+    #content_1 { width : 20%; }
+    #content_2 { width : 60%; }
+    #content_3 { width : 20%; }
+
+</style>
 <body>
 	<div class="wrap">
         <div id="navigator2">
@@ -44,7 +87,7 @@
         <div id="content">
             <div id="content_1"></div>
             <div id="content_2">
-                <div id="content_2_1"><p>CHAT</p></div>
+                <div id="content_2_1"><p>1:1 채팅</p></div>
                 <div id="content_2_2">
                 
                 	<!-- 채팅 클릭 시 뜨는 모달 (기존에는 안 보이다가 로그인 후 1:1채팅 클릭시 보임) -->
@@ -146,6 +189,7 @@
 		        		</div>
     				</div>
                 </div>
+                <div style="height: 150px"></div>
         	</div>
             <div id="content_3"></div>
 		</div>
@@ -198,7 +242,7 @@
 			var chatSocket;
 			console.log("여기 오긴하니?2");
 			
-			chatSocket = new WebSocket("ws://localhost:8006/PillSoGood/" + "${loginUser.memberNo}");
+			chatSocket = new WebSocket("ws://localhost:8006/PillSoGoodPlus/" + "${loginUser.memberNo}");
 			console.log(chatSocket);
 			
 			chatSocket.onopen = function(event) {
